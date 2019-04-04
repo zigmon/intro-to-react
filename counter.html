@@ -22,11 +22,13 @@
         }
         render() {
             return (
-                    <div>
+                    <div id="app">
                         <img src={this.props.image} alt="Bloc Logo"/>
                         <h2>Current program: {this.props.label}</h2>
                          <h3>Current week: {this.state.number}</h3>
                         <p>Current Date: {this.props.date.toLocaleDateString()}</p>
+                        <h2>Hola {this.props.name}</h2>
+                        <h3>Position: {this.props.title}</h3>
                     </div>
             );
         }
@@ -35,6 +37,8 @@
     const info = {
         date: new Date(),
         image: 'https://avatars0.githubusercontent.com/u/1441485?v=4&s=280',
+        name: 'Scott',
+        title: 'QA Director'
     }
 
     Counter.defaultProps = {
@@ -44,7 +48,10 @@
     ReactDOM.render(
             <Counter
                     date={info.date}
-                    image={info.image}/>,document.getElementById('app')
+                    image={info.image}
+                    name={info.name}
+                    title={info.title}/>,document.getElementById('app')
+
     );
 
 </script>
